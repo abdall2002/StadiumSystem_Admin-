@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Stadium>
+
+@{
+    ViewData["Title"] = "All Stadiums";
+}
+
+<h2>All Stadiums</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stadium in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(stadium.ImageUrl))
+                    {
+                        <img src="@stadium.ImageUrl" alt="@stadium.Name" width="150" />
+                    }
+                </td>
+                <td>@stadium.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@stadium.Id" class="btn btn-info btn-sm">Details</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="Reservation" asp-action="Create" asp-route-stadiumId="@stadium.Id" class="btn btn-success btn-sm">Reserve</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

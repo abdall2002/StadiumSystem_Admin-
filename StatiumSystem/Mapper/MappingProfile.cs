@@ -13,8 +13,9 @@ namespace StadiumSystem.Model
         public MappingProfile()
         {
             CreateMap<StadiumDTO, Stadium>();
-            CreateMap<ReservationDTO, Reservation>();
             CreateMap<Stadium, StadiumDTO>();
+            CreateMap<ReservationDTO, Reservation>();
+            CreateMap<Reservation, ReservationDTO>();
 
         }
     }

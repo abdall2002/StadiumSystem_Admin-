@@ -13,6 +13,8 @@ namespace StatiumSystem.Controllers
       
         private readonly StadiumDbContext _context;
         private readonly IMapper _mapper;
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var stadiums = await _context.Stadiums.ToListAsync();
@@ -98,5 +100,17 @@ namespace StatiumSystem.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var stadium = await _context.Stadiums.FirstOrDefaultAsync(s => s.Id == id);
+            if (stadium == null) return NotFound();
+
+            return View(stadium);
+        }
+
     }
 }

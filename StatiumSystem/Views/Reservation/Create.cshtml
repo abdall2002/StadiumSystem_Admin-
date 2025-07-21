@@ -1,0 +1,53 @@
+﻿@model ReservationDTO
+
+@{
+    ViewData["Title"] = "Make a Reservation";
+}
+
+<h2>Make a Reservation for @ViewBag.StadiumName</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@error.ErrorMessage</div>
+        }
+    </div>
+}
+
+<form asp-action="Create" asp-controller="Reservation" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="StadiumId" value="@ViewBag.StadiumId" />
+
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" readonly /> <!-- حقل UserName يظهر ولا يمكن تعديله -->
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReservationDate"></label>
+        <input asp-for="ReservationDate" class="form-control" type="date" />
+        <span asp-validation-for="ReservationDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartTime"></label>
+        <input asp-for="StartTime" class="form-control" type="time" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EndTime"></label>
+        <input asp-for="EndTime" class="form-control" type="time" />
+        <span asp-validation-for="EndTime" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Reserve</button>
+    <a asp-controller="Stadium" asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
