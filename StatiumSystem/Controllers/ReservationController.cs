@@ -20,6 +20,12 @@ public class ReservationController : Controller
     // GET: Reservations/Create
     public async Task<IActionResult> Create(int? stadiumId)
     {
+        if (User.IsInRole("Admin"))
+        {
+            TempData["Error"] = "Admins are not allowed to make reservations.";
+            return RedirectToAction("Index", "Stadium");
+        }
+
         if (stadiumId == null) return NotFound();
 
         var stadium = await _context.Stadiums.FindAsync(stadiumId);
@@ -40,6 +46,12 @@ public class ReservationController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ReservationDTO reservationDTO)
     {
+        if (User.IsInRole("Admin"))
+        {
+            TempData["Error"] = "Admins are not allowed to make reservations.";
+            return RedirectToAction("Index", "Stadium");
+        }
+
         // إعادة تعبئة اسم المستخدم حتى بعد POST
         reservationDTO.UserName = User.Identity.Name ?? "Unknown";
 
@@ -80,4 +92,93 @@ public class ReservationController : Controller
         TempData["Success"] = "Reservation created successfully!";
         return RedirectToAction("Index", "Stadium");
     }
+
+    [Authorize]
+    public async Task<IActionResult> MyReservations()
+    {
+        var userName = User.Identity.Name;
+
+        var reservations = await _context.Reservations
+            .Include(r => r.Stadium)
+            .Where(r => r.UserName == userName)
+            .OrderByDescending(r => r.ReservationDate)
+            .ThenByDescending(r => r.StartTime)
+            .ToListAsync();
+
+        var reservationDTOs = _mapper.Map<List<ReservationViewDTO>>(reservations);
+
+        return View(reservationDTOs);
+    }
+
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Manage()
+    {
+        var reservations = await _context.Reservations.Include(r => r.Stadium)
+            .OrderByDescending(r => r.ReservationDate)
+            .ThenByDescending(r => r.StartTime)
+            .ToListAsync();
+
+        var reservationDTOs = _mapper.Map<List<ReservationViewDTO>>(reservations);
+        return View(reservationDTOs);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Approve(int id)
+    {
+        var reservation = await _context.Reservations.FindAsync(id);
+        if (reservation == null) return NotFound();
+
+        reservation.Status = "Approved";
+        _context.Update(reservation);
+        await _context.SaveChangesAsync();
+
+        TempData["Success"] = "Reservation approved successfully.";
+        return RedirectToAction(nameof(Manage));
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Reject(int id)
+    {
+        var reservation = await _context.Reservations.FindAsync(id);
+        if (reservation == null) return NotFound();
+
+        reservation.Status = "Rejected";
+        _context.Update(reservation);
+        await _context.SaveChangesAsync();
+
+        TempData["Success"] = "Reservation rejected successfully.";
+        return RedirectToAction(nameof(Manage));
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Authorize]
+    public async Task<IActionResult> Cancel(int id)
+    {
+        var reservation = await _context.Reservations.FindAsync(id);
+        if (reservation == null)
+            return NotFound();
+
+        // التأكد أن المستخدم الحالي هو صاحب الحجز
+        if (reservation.UserName != User.Identity.Name && !User.IsInRole("Admin"))
+            return Forbid();
+
+        if (reservation.Status == "Pending" || reservation.Status == "Approved")
+        {
+            reservation.Status = "Cancelled";
+            _context.Update(reservation);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Reservation cancelled successfully.";
+        }
+        else
+        {
+            TempData["Error"] = "You cannot cancel this reservation.";
+        }
+
+        return RedirectToAction(nameof(MyReservations));
+    }
+
 }

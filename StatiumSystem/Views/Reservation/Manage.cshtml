@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ReservationViewDTO>
+
+@{
+    ViewData["Title"] = "Manage Reservations";
+}
+
+<h2>Manage Reservations</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">There are no reservations yet.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stadium</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StadiumName</td>
+                <td>@item.UserName</td>
+                <td>@item.ReservationDate.ToShortDateString()</td>
+                <td>@item.StartTime</td>
+                <td>@item.EndTime</td>
+                <td>@item.Status</td>
+                <td>
+                    @if (item.Status == "Pending")
+                    {
+                        <form asp-action="Approve" asp-route-id="@item.Id" method="post" style="display:inline">
+                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                        </form>
+                        <form asp-action="Reject" asp-route-id="@item.Id" method="post" style="display:inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-muted">No Actions</span>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

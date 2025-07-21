@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ReservationViewDTO>
+
+@{
+    ViewData["Title"] = "My Reservations";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<h2>My Reservations</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You have no reservations yet.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stadium</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Status</th>
+                <th>Cancel</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.StadiumName</td>
+                    <td>@item.ReservationDate.ToShortDateString()</td>
+                    <td>@item.StartTime</td>
+                    <td>@item.EndTime</td>
+                    <td>@item.Status</td>
+                    <td>
+                        @if (item.Status == "Pending" || item.Status == "Approved")
+                        {
+                            <form asp-action="Cancel" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to cancel this reservation?');" style="display:inline">
+                                <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
