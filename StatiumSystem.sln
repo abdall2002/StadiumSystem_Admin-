@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatiumSystem", "StatiumSystem\StatiumSystem.csproj", "{D56298D4-910B-4A0C-A09C-828F47F906FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StadiumSystem.Model", "StadiumSystem.Model\StadiumSystem.Model.csproj", "{5FA3D5CA-AE65-4E16-934D-430397B8CE90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D56298D4-910B-4A0C-A09C-828F47F906FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56298D4-910B-4A0C-A09C-828F47F906FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56298D4-910B-4A0C-A09C-828F47F906FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56298D4-910B-4A0C-A09C-828F47F906FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA3D5CA-AE65-4E16-934D-430397B8CE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA3D5CA-AE65-4E16-934D-430397B8CE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA3D5CA-AE65-4E16-934D-430397B8CE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA3D5CA-AE65-4E16-934D-430397B8CE90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4F89444-8ECE-46FD-8F54-6607809905D4}
+	EndGlobalSection
+EndGlobal
