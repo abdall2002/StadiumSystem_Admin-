@@ -284,3 +284,5 @@ D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\obj\Debug\net8.
 D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\obj\Debug\net8.0\StatiumSystem.pdb
 D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\obj\Debug\net8.0\StatiumSystem.genruntimeconfig.cache
 D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\obj\Debug\net8.0\ref\StatiumSystem.dll
+D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\bin\Debug\net8.0\AutoMapper.dll
+D:\Summer Internship\اكواد\StadiumSystem-main\StatiumSystem\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

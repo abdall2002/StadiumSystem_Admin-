@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages(); // Required for Identity UI
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
