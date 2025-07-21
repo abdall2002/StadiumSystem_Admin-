@@ -31,7 +31,7 @@
                         </li>
                         @if (User.IsInRole("Admin"))
                         {
-                            <a asp-action="Create" class="btn btn-primary">Add Stadium</a>
+                            <a asp-action="Create" asp-controller="Stadium" class="btn btn-primary">Add Stadium</a>
                         }
                     </ul>
                     <partial name="_LoginPartial" />

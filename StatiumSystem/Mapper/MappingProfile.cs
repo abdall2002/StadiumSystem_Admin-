@@ -14,6 +14,8 @@ namespace StadiumSystem.Model
         {
             CreateMap<StadiumDTO, Stadium>();
             CreateMap<ReservationDTO, Reservation>();
+            CreateMap<Stadium, StadiumDTO>();
+
         }
     }
 }
