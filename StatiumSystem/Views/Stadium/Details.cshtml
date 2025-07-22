@@ -21,23 +21,23 @@
     @if (!User.IsInRole("Admin"))
     {
         <div class="alert alert-success d-flex justify-content-between align-items-center">
-            <span>✅ يمكنك حجز هذا الملعب الآن</span>
+            <span>Now, You Can Make a Reservation</span>
             <a asp-controller="Reservation" asp-action="Create" asp-route-stadiumId="@Model.Id" class="btn btn-success btn-sm">Reserve</a>
         </div>
     }
     else
     {
         <div class="alert alert-info">
-            🛈 كأدمن، لا يمكنك حجز الملاعب.
+            for Users Only, No Admins
         </div>
     }
 }
 else
 {
     <div class="alert alert-warning">
-        🛈 قم بتسجيل الدخول أولاً لحجز هذا الملعب.
+        Please Register before Make a Reservation
     </div>
 }
 
 
-<a asp-action="Index" class="btn btn-secondary mt-2">رجوع لقائمة الملاعب</a>
+<a asp-action="Index" class="btn btn-secondary mt-2">Bact to All Stadium</a>

@@ -226,8 +226,7 @@
               "RelativeToolTip": "StatiumSystem\\Models\\ReservationFullViewDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T19:19:05.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T19:19:05.748Z"
             },
             {
               "$type": "Document",
@@ -239,8 +238,7 @@
               "RelativeToolTip": "StatiumSystem\\Views\\Reservation\\Manage.cshtml",
               "ViewState": "AQIAABQAAAAAAAAAAAAswB8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-21T18:46:36.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T18:46:36.856Z"
             },
             {
               "$type": "Document",
@@ -252,8 +250,7 @@
               "RelativeToolTip": "StatiumSystem\\Views\\Reservation\\MyReservations.cshtml",
               "ViewState": "AQIAACQAAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-21T18:42:27.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T18:42:27.302Z"
             },
             {
               "$type": "Document",
@@ -265,8 +262,7 @@
               "RelativeToolTip": "StatiumSystem\\Models\\ReservationViewDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T18:41:33.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T18:41:33.034Z"
             },
             {
               "$type": "Document",
@@ -302,8 +298,7 @@
               "RelativeToolTip": "StatiumSystem\\Views\\Stadium\\Details.cshtml",
               "ViewState": "AQIAABwAAAAAAAAAAAAswBgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-21T16:06:36.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T16:06:36.764Z"
             },
             {
               "$type": "Document",
@@ -399,8 +394,7 @@
               "RelativeToolTip": "StatiumSystem\\Controllers\\ReservationController.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAABkAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:15:27.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T15:15:27.198Z"
             },
             {
               "$type": "Document",
@@ -412,8 +406,7 @@
               "RelativeToolTip": "StatiumSystem\\Controllers\\StadiumController.cs",
               "ViewState": "AQIAAF4AAAAAAAAAAAAwwHEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:14:30.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T15:14:30.129Z"
             },
             {
               "$type": "Document",
@@ -425,8 +418,7 @@
               "RelativeToolTip": "StatiumSystem\\Mapper\\MappingProfile.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:13:14.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T15:13:14.889Z"
             },
             {
               "$type": "Document",
@@ -450,8 +442,7 @@
               "RelativeToolTip": "StatiumSystem\\Models\\ReservationDTO.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAxwAoAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:03:44.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T15:03:44.263Z"
             },
             {
               "$type": "Document",
@@ -643,8 +634,7 @@
               "RelativeToolTip": "StatiumSystem\\Controllers\\HomeController.cs",
               "ViewState": "AQIAABEAAAAAAAAAAADgvwoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T09:01:30.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-20T09:01:30.121Z"
             },
             {
               "$type": "Document",
@@ -656,8 +646,7 @@
               "RelativeToolTip": "StatiumSystem\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAACAAAAAAAAAAAAAswCwAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-20T08:57:09.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-20T08:57:09.696Z"
             },
             {
               "$type": "Document",
